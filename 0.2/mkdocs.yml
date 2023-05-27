@@ -1,0 +1,87 @@
+site_name: spiderpool
+docs_dir: docs
+site_dir: site
+repo_name: spidernet-io/spiderpool
+repo_url: https://github.com/spidernet-io/spiderpool
+remote_branch: github_pages
+theme:
+  name: readthedocs
+  # The maximum depth of the navigation tree in the sidebar
+  navigation_depth: 2
+  palette:
+    scheme: default
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - search.share
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - tags
+  - search
+
+markdown_extensions:
+  - meta
+  - toc
+  - tables
+  - fenced_code
+  - tables
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+
+nav:
+  - README.md
+  - Installation:
+      - Installation: usage/install.md
+      - Upgrading: usage/upgrade.md
+      - Certificates: usage/certificate.md
+  - Usage:
+      - SpiderSubnet: usage/spider-subnet.md
+      - Default IPPool at namespace: usage/ippool-namespace.md
+      - Back up IPPool: usage/ippool-multi.md
+      - Namespace affinity of IPPool: usage/ippool-affinity-namespace.md
+      - Node affinity of IPPool: usage/ippool-affinity-node.md
+      - Pod affinity of IPPool: usage/ippool-affinity-pod.md
+      - IPv6 support: usage/ipv6.md
+      - StatefulSet: usage/statefulset.md
+      - Reserved IP: usage/reserved-ip.md
+      - Third-party controllers: usage/third-party-controller.md
+      - Reclaim IP: usage/gc.md
+      - Route support: usage/route.md
+      - Spiderpool Performance Testing: usage/performance.md
+      - FAQ: usage/debug.md
+  - Concepts:
+      - Annotations: concepts/annotation.md
+      - Architecture: concepts/arch.md
+      - Configuration: concepts/config.md
+      - IP Allocation: concepts/allocation.md
+      - Metrics: concepts/metrics.md
+      - Resource Reclaim: concepts/gc.md
+      - SpiderEndpoint: concepts/spiderendpoint.md
+      - SpiderIPPool: concepts/spiderippool.md
+      - SpiderReservedIP: concepts/spiderreservedip.md
+      - SpiderSubnet: concepts/spidersubnet.md
+  - CLI Reference:
+      - spiderpoolctl: cmdref/spiderpoolctl.md
+      - spiderpool-controller: cmdref/spiderpool-controller.md
+      - spiderpool-agent: cmdref/spiderpool-agent.md
+  - Development:
+      - Contribution Guide: develop/contributing.md
+      - Code of Conduct: develop/contributing.md
+      - Release workflow: develop/release.md
+      - Roadmap: develop/roadmap.md
+      - Swagger OpenAPI: develop/swagger_openapi.md
